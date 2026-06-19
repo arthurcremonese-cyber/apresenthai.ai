@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apresentha.ai | Grupo Exclusivo — B</title>
+  <meta name="description" content="Existe um sistema que pensa a estrutura das suas tarefas acadêmicas por você. Entre no grupo exclusivo e seja o primeiro a ter acesso." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: 'Boldonse';
+      src: url('Boldonse-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --verde:   #cff369;
+      --rosa:    #ff3cac;
+      --vermelho:#ff4831;
+      --azul:    #0055d2;
+      --preto:   #0a0a0a;
+      --branco:  #ffffff;
+      --cinza:   #f4f4f4;
+      --texto:   #1a1a1a;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--branco);
+      color: var(--texto);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── TOP BAR ── */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: var(--azul);
+      color: var(--branco);
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .top-bar-spacer {
+      height: 41px;
+    }
+
+    /* ── STRIPE ── */
+    .stripe {
+      height: 5px;
+      background: linear-gradient(90deg, var(--azul), var(--rosa), var(--vermelho), var(--verde));
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--preto);
+      color: var(--branco);
+      padding: 64px 24px 72px;
+      text-align: center;
+    }
+
+    .hero-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--verde);
+      color: var(--preto);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 4px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(26px, 5vw, 40px);
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 32px;
+      color: var(--branco);
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--rosa);
+    }
+
+    /* destaque box */
+    .destaque {
+      border: 2px solid var(--azul);
+      border-left: 5px solid var(--azul);
+      background: rgba(0,85,210,0.08);
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+
+    .destaque p {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.6;
+      color: var(--branco);
+    }
+
+    .destaque strong {
+      color: var(--verde);
+    }
+
+    /* checks visuais */
+    .checks-visuais {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .check-emoji {
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .reforco {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 32px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    /* CTA */
+    .cta-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: var(--branco);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      padding: 16px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+      letter-spacing: 0.01em;
+    }
+
+    .btn-cta:hover { opacity: 0.88; }
+
+    .btn-cta svg { flex-shrink: 0; }
+
+    .cta-note {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      font-weight: 500;
+    }
+
+    .cta-note .lock { color: #25D366; }
+
+    /* ── SEPARADOR ── */
+    .sep {
+      height: 1px;
+      background: #e8e8e8;
+      margin: 0;
+    }
+
+    /* ── SEÇÃO PROVA ── */
+    .proof {
+      background: var(--cinza);
+      padding: 64px 24px;
+    }
+
+    .proof-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .section-tag {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--azul);
+      margin-bottom: 12px;
+    }
+
+    .proof h2 {
+      font-size: clamp(24px, 4vw, 34px);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 36px;
+      color: var(--preto);
+    }
+
+    .quotes {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .quote-card {
+      background: var(--branco);
+      border-radius: 10px;
+      padding: 24px;
+      border-left: 4px solid var(--azul);
+    }
+
+    .quote-text {
+      font-size: 15px;
+      line-height: 1.65;
+      color: #333;
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+
+    .quote-author {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--preto);
+    }
+
+    .quote-role {
+      font-size: 12px;
+      color: #888;
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    /* ── CTA FINAL ── */
+    .final {
+      background: var(--preto);
+      color: var(--branco);
+      padding: 72px 24px;
+      text-align: center;
+    }
+
+    .final-inner {
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    .final-tag {
+      display: inline-block;
+      background: var(--rosa);
+      color: var(--branco);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 4px;
+      margin-bottom: 24px;
+    }
+
+    .final h2 {
+      font-size: clamp(26px, 5vw, 38px);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .final-sub {
+      font-size: 16px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 36px;
+    }
+
+    .final-sub strong { color: var(--verde); }
+
+    .checks-final {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 40px;
+      text-align: left;
+    }
+
+    .chk {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--branco);
+    }
+
+    .chk::before {
+      content: '';
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--verde);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a0a0a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+      background-size: 11px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .final .cta-wrap {
+      align-items: center;
+    }
+
+    .final-note {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      margin-top: 12px;
+      font-weight: 500;
+    }
+
+    .final-note em {
+      color: rgba(255,255,255,0.7);
+      font-style: normal;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #050505;
+      color: rgba(255,255,255,0.35);
+      text-align: center;
+      padding: 24px 16px;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.7;
+    }
+
+    footer strong { color: rgba(255,255,255,0.6); }
+
+    /* ── CENTRALIZAÇÃO GERAL ── */
+    .hero-inner,
+    .proof-inner,
+    .final-inner {
+      width: 100%;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .final-inner { max-width: 580px; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 600px) {
+      .top-bar { font-size: 11px; padding: 10px 12px; }
+      .top-bar-spacer { height: 37px; }
+      .hero { padding: 40px 20px 52px; }
+      .hero h1 { font-size: 24px; }
+      .destaque p { font-size: 15px; }
+      .check-item { font-size: 14px; padding: 12px 14px; }
+      .proof { padding: 48px 20px; }
+      .proof h2 { font-size: 22px; }
+      .quote-text { font-size: 14px; }
+      .final { padding: 52px 20px; }
+      .final h2 { font-size: 24px; }
+      .final-sub { font-size: 15px; }
+      .chk { font-size: 14px; }
+      .checks-final { width: 100%; }
+      .btn-cta { width: 100%; justify-content: center; font-size: 15px; }
+      .cta-wrap { align-items: stretch; }
+      .final .cta-wrap { align-items: stretch; }
+      .eyebrow { font-size: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    Grupo exclusivo para universitários sufocados pelos trabalhos da faculdade
+  </div>
+  <div class="top-bar-spacer"></div>
+
+  <!-- STRIPE -->
+  <div class="stripe"></div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+
+      <span class="eyebrow">Pra quem não sabe por onde começar quando recebe uma demanda da faculdade</span>
+
+      <h1>
+        Você abre mil abas, acumula informação, a cabeça não para e na hora de montar o trabalho, <em>não sai nada.</em>
+      </h1>
+
+      <div class="destaque">
+        <p>Um sistema que <strong>organiza essa confusão e transforma tudo que está na sua cabeça</strong> em um trabalho estruturado e pronto para entregar.</p>
+      </div>
+
+      <div class="checks-visuais">
+        <div class="check-item">
+          <span class="check-emoji">😩</span>
+          Mesmo quem já usa ChatGPT continua travando sem saber estruturar
+        </div>
+        <div class="check-item">
+          <span class="check-emoji">⏰</span>
+          Não é falta de tempo. É gasto de energia decidindo por onde começar
+        </div>
+        <div class="check-item">
+          <span class="check-emoji">🔁</span>
+          Toda tarefa parece nova porque você sempre começa do zero
+        </div>
+      </div>
+
+      <p class="reforco">Com ferramentas que você provavelmente já usa</p>
+
+      <div class="cta-wrap">
+        <a href="#" class="btn-cta" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Entrar no grupo exclusivo
+        </a>
+        <p class="cta-note">
+          ✅ Quem entrar no grupo recebe em primeira mão um sistema para nunca mais travar em um trabalho da faculdade
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEPARADOR -->
+  <div class="sep"></div>
+
+  <!-- PROVA -->
+  <section class="proof">
+    <div class="proof-inner">
+      <p class="section-tag">Quem testou, prova</p>
+      <h2>Quem usou o sistema<br/>parou de travar.</h2>
+      <div class="quotes">
+
+        <div class="quote-card">
+          <p class="quote-text">"A parte mais difícil sempre foi pegar todas as informações e conseguir organizá-las de um jeito que fizesse sentido. Quando usei o sistema, entendi a linha de raciocínio, montei a apresentação e formalizei tudo, sem precisar ter conhecimento técnico de nada. Apresentei meu trabalho sem ficar horas na frente do computador."</p>
+          <div class="quote-author">Mari</div>
+          <div class="quote-role">Aluna Apresentha.ai</div>
+        </div>
+
+        <div class="quote-card">
+          <p class="quote-text">"Toda tarefa parecia um projeto gigante. Não era falta de tempo. Eu travava antes mesmo de começar. Com o sistema, a primeira coisa que foi embora foi aquela sensação de não saber por onde começar."</p>
+          <div class="quote-author">Aluno Apresentha.ai</div>
+          <div class="quote-role"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEPARADOR -->
+  <div class="sep"></div>
+
+  <!-- CTA FINAL -->
+  <section class="final">
+    <div class="final-inner">
+
+      <span class="final-tag">Acesso em primeira mão</span>
+
+      <h2>Entre no grupo exclusivo<br/>e seja o primeiro a receber essa solução.</h2>
+
+      <p class="final-sub">
+        Vou apresentar um sistema pra você <strong>parar de gastar energia mental</strong> tentando estruturar tarefas acadêmicas e começar a só executar.
+      </p>
+
+      <div class="checks-final">
+        <div class="chk">Sem precisar aprender IA do zero</div>
+        <div class="chk">Sem virar a madrugada</div>
+        <div class="chk">Sem travar sem saber por onde começar</div>
+      </div>
+
+      <div class="cta-wrap">
+        <a href="#" class="btn-cta" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Quero entrar no grupo
+        </a>
+        <p class="final-note">Faça parte do <em>primeiro grupo</em> a ter acesso ao sistema Apresentha.ai</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STRIPE -->
+  <div class="stripe"></div>
+
+  <!-- FOOTER -->
+  <footer>
+    <strong>Apresentha.ai</strong><br/>
+    © 2026 Apresentha.ai. Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
