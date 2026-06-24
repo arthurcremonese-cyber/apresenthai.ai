@@ -2,5 +2,9 @@
   "buildCommand": "",
   "outputDirectory": ".",
   "installCommand": "",
-  "framework": null
+  "framework": null,
+  "rewrites": [
+    { "source": "/captacao-a", "destination": "/pagina-captacao.html" },
+    { "source": "/captacao-b", "destination": "/pagina-captacao-b.html" }
+  ]
 }
