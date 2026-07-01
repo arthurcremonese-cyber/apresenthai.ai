@@ -7,7 +7,8 @@
   <meta name="description" content="Existe um sistema que pensa a estrutura das suas tarefas acadêmicas por você. Entre no grupo exclusivo e seja o primeiro a ter acesso." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
 
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -58,6 +59,8 @@
       font-size: 13px;
       font-weight: 600;
       letter-spacing: 0.02em;
+      height: 41px;
+      contain: layout style;
     }
 
     .top-bar-spacer {
@@ -136,6 +139,7 @@
       flex-direction: column;
       gap: 12px;
       margin-bottom: 28px;
+      min-height: 174px;
     }
 
     .check-item {
