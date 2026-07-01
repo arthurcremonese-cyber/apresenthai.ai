@@ -25,6 +25,15 @@
       font-style: normal;
     }
 
+    @font-face {
+      font-family: 'Montserrat-Fallback';
+      src: local('Arial');
+      size-adjust: 94%;
+      ascent-override: 95%;
+      descent-override: 22%;
+      line-gap-override: 0%;
+    }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -39,7 +48,7 @@
     }
 
     body {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Montserrat', 'Montserrat-Fallback', sans-serif;
       background: var(--branco);
       color: var(--texto);
       -webkit-font-smoothing: antialiased;
@@ -180,7 +189,7 @@
       gap: 10px;
       background: #25D366;
       color: var(--branco);
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Montserrat', 'Montserrat-Fallback', sans-serif;
       font-size: 16px;
       font-weight: 800;
       padding: 16px 28px;
