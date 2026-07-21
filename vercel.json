@@ -5,6 +5,7 @@
   "framework": null,
   "rewrites": [
     { "source": "/captacao-a", "destination": "/pagina-captacao.html" },
-    { "source": "/captacao-b", "destination": "/pagina-captacao-b.html" }
+    { "source": "/captacao-b", "destination": "/pagina-captacao-b.html" },
+    { "source": "/sistema", "destination": "/sistema.html" }
   ]
 }
