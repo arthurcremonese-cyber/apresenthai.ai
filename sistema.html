@@ -135,8 +135,8 @@
   .hero-grid{
     display:grid;grid-template-columns:1fr;gap:48px;align-items:center;
     position:relative;z-index:1;
+    max-width:720px;margin:0 auto;
   }
-  @media(min-width:960px){ .hero-grid{grid-template-columns:1.05fr 0.95fr;} }
   .hero-blob{
     position:absolute;
     width:520px;height:520px;
@@ -170,31 +170,6 @@
     display:flex;align-items:center;justify-content:center;margin-top:1px;
   }
 
-  .hero-card{
-    position:relative;z-index:1;
-    background:var(--card);
-    border:var(--bw) solid var(--ink);
-    border-radius:24px 24px 24px 4px;
-    box-shadow:10px 10px 0px 0px var(--secondary);
-    padding:28px;
-    transform:rotate(1.5deg);
-  }
-  .hero-card .mini-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;}
-  .mini-dot{width:10px;height:10px;border-radius:50%;}
-  .flow-mini{display:flex;flex-direction:column;gap:0;}
-  .flow-step{
-    display:flex;align-items:center;gap:14px;padding:14px 0;
-    border-bottom:2px dashed var(--muted-foreground);
-  }
-  .flow-step:last-child{border-bottom:none;}
-  .flow-num{
-    width:34px;height:34px;border-radius:50%;flex-shrink:0;
-    display:flex;align-items:center;justify-content:center;
-    font-family:"Outfit",sans-serif;font-weight:800;font-size:14px;
-    border:2px solid var(--ink);color:var(--ink);
-  }
-  .flow-step p{font-weight:600;font-size:14.5px;}
-
   /* ---------- Section headers ---------- */
   .section-head{max-width:680px;margin:0 auto 56px;text-align:center;position:relative;z-index:1;}
   .section-head h2{font-size:clamp(26px,4vw,38px);}
@@ -203,21 +178,19 @@
   .squiggle{display:block;margin:18px auto 0;}
 
   /* ---------- Pain section ---------- */
-  .pain{background:var(--ink);color:#fff;}
-  .pain .section-head h2{color:#fff;}
-  .pain .section-head p{color:#c7c7c7;}
+  .pain{background:var(--muted);}
   .pain-quotes{
     display:grid;grid-template-columns:1fr;gap:16px;max-width:640px;margin:0 auto 40px;
     position:relative;z-index:1;
   }
   @media(min-width:640px){ .pain-quotes{grid-template-columns:1fr 1fr;} }
   .pain-quote{
-    background:#161616;border:2px solid #333;border-radius:16px;
-    padding:18px 20px;font-weight:600;font-size:15.5px;color:#fff;
-    box-shadow:4px 4px 0px 0px var(--tertiary);
+    background:var(--card);border:var(--bw) solid var(--ink);border-radius:16px;
+    padding:18px 20px;font-weight:600;font-size:15.5px;color:var(--foreground);
+    box-shadow:4px 4px 0px 0px var(--ink);
   }
-  .pain-outro{max-width:620px;margin:0 auto;text-align:center;font-size:17px;color:#e5e5e5;font-weight:500;position:relative;z-index:1;}
-  .pain-outro strong{color:var(--tertiary);}
+  .pain-outro{max-width:620px;margin:0 auto;text-align:center;font-size:17px;color:var(--muted-foreground);font-weight:500;position:relative;z-index:1;}
+  .pain-outro strong{color:var(--accent);}
 
   /* ---------- Mechanism ---------- */
   .flow-wrap{position:relative;max-width:760px;margin:0 auto;z-index:1;}
@@ -480,7 +453,6 @@
   }
 
   @media(max-width:640px){
-    .hero-card{transform:none;}
     .testimonial-card{transform:none !important;}
     .squiggle-divider{margin:28px auto;}
 
@@ -492,7 +464,6 @@
     .shape{display:none;}
     .hero-blob{display:block;width:220px;height:220px;top:-90px;right:-100px;opacity:0.85;}
     .hero{padding-top:32px;}
-    .hero-card{box-shadow:3px 3px 0px 0px var(--secondary);padding:20px;}
     .lesson-card{box-shadow:3px 3px 0px 0px var(--muted);}
     .lesson-card:hover{transform:none;box-shadow:3px 3px 0px 0px var(--accent);}
     .flow-body{box-shadow:2px 2px 0px 0px var(--muted);}
@@ -559,8 +530,7 @@
   <div class="hero-blob"></div>
   <div class="container hero-grid">
     <div>
-      <span class="eyebrow">Sistema, não curso de IA</span>
-      <h1 style="margin-top:20px;">A parte que mais consome quem trabalha e estuda não é o cansaço.</h1>
+      <h1>A parte que mais consome quem trabalha e estuda não é o cansaço.</h1>
       <p class="lead">É o esforço mental de transformar uma demanda da faculdade em uma <em>entrega</em>.</p>
       <p class="sub">Você não precisa mais carregar esse peso sozinho.</p>
 
@@ -574,21 +544,6 @@
         Eliminar o esforço mental
         <span class="icon-bubble"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-    </div>
-
-    <div class="hero-card">
-      <div class="mini-header">
-        <span class="mini-dot" style="background:var(--quaternary);"></span>
-        <span class="mini-dot" style="background:var(--tertiary);"></span>
-        <span class="mini-dot" style="background:var(--accent);"></span>
-        <span style="font-size:12.5px;font-weight:700;color:var(--muted-foreground);margin-left:auto;">SEU DIA COM O SISTEMA</span>
-      </div>
-      <div class="flow-mini">
-        <div class="flow-step"><span class="flow-num" style="background:var(--accent);color:#fff;">1</span><p>Professor passa a atividade.</p></div>
-        <div class="flow-step"><span class="flow-num" style="background:var(--tertiary);">2</span><p>O sistema encontra as informações certas.</p></div>
-        <div class="flow-step"><span class="flow-num" style="background:var(--secondary);color:#fff;">3</span><p>O sistema organiza tudo em uma estrutura clara.</p></div>
-        <div class="flow-step"><span class="flow-num" style="background:var(--quaternary);color:#fff;">4</span><p>Você executa e entrega.</p></div>
-      </div>
     </div>
   </div>
 </section>
