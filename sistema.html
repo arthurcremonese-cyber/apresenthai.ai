@@ -248,15 +248,15 @@
   .ti-claude{background:#fff;}
 
   /* ---------- Positioning ---------- */
-  .positioning{text-align:center;}
+  .positioning{text-align:center;background:var(--accent);}
   .positioning .container{position:relative;z-index:1;max-width:780px;}
-  .positioning h2{font-size:clamp(24px,4vw,32px);color:var(--muted-foreground);font-weight:700;}
+  .positioning h2{font-size:clamp(24px,4vw,32px);color:rgba(255,255,255,0.7);font-weight:700;}
   .positioning h3{
     margin-top:14px;font-size:clamp(28px,4.5vw,40px);
-    color:var(--foreground);
+    color:#fff;
   }
   .positioning h3 span{
-    color:var(--accent);
+    color:var(--tertiary);
     position:relative;
   }
 
@@ -622,9 +622,9 @@
 </section>
 
 <!-- POSICIONAMENTO -->
-<section class="positioning" style="background:var(--muted);">
-  <div class="shape" style="width:0;height:0;border-left:60px solid transparent;border-right:60px solid transparent;border-bottom:100px solid var(--secondary);opacity:0.25;top:20px;left:6%;transform:rotate(12deg);"></div>
-  <div class="shape shape-circle" style="width:120px;height:120px;background:var(--accent);opacity:0.15;bottom:10px;right:8%;"></div>
+<section class="positioning">
+  <div class="shape" style="width:0;height:0;border-left:60px solid transparent;border-right:60px solid transparent;border-bottom:100px solid var(--tertiary);opacity:0.3;top:20px;left:6%;transform:rotate(12deg);"></div>
+  <div class="shape shape-circle" style="width:120px;height:120px;background:var(--secondary);opacity:0.25;bottom:10px;right:8%;"></div>
   <div class="container">
     <h2>Você não vai aprender IA.</h2>
     <h3>Você vai aprender um <span>sistema que pensa a estrutura</span> das suas tarefas acadêmicas por você.</h3>
