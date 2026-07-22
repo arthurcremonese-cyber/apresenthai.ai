@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Apresentha.ai — Pare de travar diante da tela em branco</title>
 <meta name="description" content="O sistema que pensa a estrutura das suas tarefas acadêmicas por você. De demanda da faculdade a apresentação pronta, sem esforço mental.">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KCRL45MB');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -482,6 +487,8 @@
 </style>
 </head>
 <body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCRL45MB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
@@ -540,7 +547,7 @@
         <li><span class="check-bubble"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Transforme informações soltas em uma apresentação pronta.</li>
       </ul>
 
-      <a href="https://checkout.pagtrust.com.br/ck3fc8f9e8?funnel=fnfb6af4a8" class="btn btn-primary" target="_blank" rel="noopener">
+      <a href="https://checkout.pagtrust.com.br/ck3fc8f9e8?funnel=fnfb6af4a8" class="btn btn-primary js-checkout-cta" data-cta-location="hero" target="_blank" rel="noopener">
         Eliminar o esforço mental
         <span class="icon-bubble"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
@@ -766,7 +773,7 @@
       <p class="price-was">De <s>R$ 197</s></p>
       <div class="price-alt">12x de R$ 9,90</div>
       <p class="price-or">ou R$ 99,00 à vista</p>
-      <a href="https://checkout.pagtrust.com.br/ck3fc8f9e8?funnel=fnfb6af4a8" class="btn btn-primary btn-block" target="_blank" rel="noopener">
+      <a href="https://checkout.pagtrust.com.br/ck3fc8f9e8?funnel=fnfb6af4a8" class="btn btn-primary btn-block js-checkout-cta" data-cta-location="preco" target="_blank" rel="noopener">
         Quero começar agora
         <span class="icon-bubble"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
@@ -799,7 +806,7 @@
   <div class="shape shape-circle" style="width:160px;height:160px;background:#fff;opacity:0.12;bottom:-50px;left:-40px;"></div>
   <div class="container">
     <h3>Pare de pensar na estrutura.<br>Comece a entregar.</h3>
-    <a href="https://checkout.pagtrust.com.br/ck3fc8f9e8?funnel=fnfb6af4a8" class="btn btn-primary" target="_blank" rel="noopener">
+    <a href="https://checkout.pagtrust.com.br/ck3fc8f9e8?funnel=fnfb6af4a8" class="btn btn-primary js-checkout-cta" data-cta-location="final_cta" target="_blank" rel="noopener">
       Quero garantir o sistema
       <span class="icon-bubble"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
@@ -864,6 +871,21 @@
     </div>
   </div>
 </footer>
+
+<script>
+(function(){
+  window.dataLayer = window.dataLayer || [];
+  document.querySelectorAll('.js-checkout-cta').forEach(function(el){
+    el.addEventListener('click', function(){
+      window.dataLayer.push({
+        event: 'initiate_checkout',
+        cta_location: el.getAttribute('data-cta-location') || '',
+        cta_text: el.textContent.trim()
+      });
+    });
+  });
+})();
+</script>
 
 <script>
 (function(){
