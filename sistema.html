@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Apresentha.ai — Pare de travar diante da tela em branco</title>
+<title>Apresentha.ai: Pare de travar diante da tela em branco</title>
 <meta name="description" content="O sistema que pensa a estrutura das suas tarefas acadêmicas por você. De demanda da faculdade a apresentação pronta, sem esforço mental.">
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -166,6 +166,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     max-width:52ch;
   }
   .hero .sub{margin-top:12px;font-size:16px;color:var(--muted-foreground);max-width:50ch;}
+  .hl{font-weight:800;}
+  .hl-accent{color:var(--accent);}
+  .hl-secondary{color:var(--secondary);}
+  .hl-quaternary{color:var(--quaternary);}
 
   .checklist{margin:32px 0 28px;display:flex;flex-direction:column;gap:14px;}
   .checklist li{display:flex;align-items:flex-start;gap:12px;font-weight:600;font-size:16px;}
@@ -185,17 +189,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* ---------- Pain section ---------- */
   .pain{background:var(--muted);}
   .pain-quotes{
-    display:grid;grid-template-columns:1fr;gap:16px;max-width:640px;margin:0 auto 40px;
+    display:grid;grid-template-columns:1fr;gap:28px 20px;max-width:640px;margin:0 auto 48px;
     position:relative;z-index:1;
   }
   @media(min-width:640px){ .pain-quotes{grid-template-columns:1fr 1fr;} }
   .pain-quote{
-    background:var(--card);border:var(--bw) solid var(--ink);border-radius:16px;
-    padding:18px 20px;font-weight:600;font-size:15.5px;color:var(--foreground);
-    box-shadow:4px 4px 0px 0px var(--ink);
+    position:relative;
+    background:var(--card);border:var(--bw) solid var(--ink);border-radius:16px 16px 16px 4px;
+    padding:22px 20px 18px;font-weight:700;font-size:15.5px;color:var(--foreground);
+    transition:transform .3s var(--bounce);
   }
+  .pain-quote:nth-child(1){transform:rotate(-2deg);box-shadow:5px 5px 0px 0px var(--accent);}
+  .pain-quote:nth-child(2){transform:rotate(1.5deg);box-shadow:5px 5px 0px 0px var(--secondary);}
+  .pain-quote:nth-child(3){transform:rotate(1deg);box-shadow:5px 5px 0px 0px var(--quaternary);}
+  .pain-quote:nth-child(4){transform:rotate(-1.5deg);box-shadow:5px 5px 0px 0px var(--foreground);}
+  .pain-quote:hover{transform:rotate(0deg) scale(1.03);}
+  .pain-quote-mark{
+    position:absolute;top:-14px;left:18px;width:30px;height:30px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;color:#fff;
+    font-family:"Outfit",sans-serif;font-weight:800;font-size:15px;
+    border:2px solid var(--ink);
+  }
+  .pain-quote:nth-child(1) .pain-quote-mark{background:var(--accent);}
+  .pain-quote:nth-child(2) .pain-quote-mark{background:var(--secondary);}
+  .pain-quote:nth-child(3) .pain-quote-mark{background:var(--quaternary);}
+  .pain-quote:nth-child(4) .pain-quote-mark{background:var(--foreground);}
   .pain-outro{max-width:620px;margin:0 auto;text-align:center;font-size:17px;color:var(--muted-foreground);font-weight:500;position:relative;z-index:1;}
   .pain-outro strong{color:var(--accent);}
+  .pain-squiggle{display:block;margin:14px auto 0;}
 
   /* ---------- Mechanism ---------- */
   .flow-wrap{position:relative;max-width:760px;margin:0 auto;z-index:1;}
@@ -225,10 +246,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .flow-body h4{font-size:17px;margin-bottom:6px;}
   .flow-body p{font-size:15px;color:var(--muted-foreground);}
   .flow-final{
-    text-align:center;margin-top:32px;
+    text-align:center;margin-top:32px;max-width:640px;margin-left:auto;margin-right:auto;
   }
   .flow-final p{
-    font-family:"Outfit",sans-serif;font-weight:800;font-size:20px;color:var(--foreground);
+    font-family:"Outfit",sans-serif;font-weight:800;font-size:19px;color:var(--foreground);
+    line-height:1.35;
   }
   .flow-final-squiggle{display:block;margin:8px auto 0;}
 
@@ -252,56 +274,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .ti-chatgpt{background:#74AA9C;}
   .ti-claude{background:#fff;}
 
-  /* ---------- Positioning ---------- */
-  .positioning{text-align:center;background:var(--accent);}
-  .positioning .container{position:relative;z-index:1;max-width:780px;}
-  .positioning h2{font-size:clamp(24px,4vw,32px);color:rgba(255,255,255,0.7);font-weight:700;}
-  .positioning h3{
-    margin-top:14px;font-size:clamp(28px,4.5vw,40px);
-    color:#fff;
-  }
-  .positioning h3 span{
-    color:var(--tertiary);
-    position:relative;
-  }
 
   /* ---------- What you get ---------- */
-  .lessons-grid{
-    display:grid;grid-template-columns:1fr;gap:24px;position:relative;z-index:1;
+  .mockup-wrap{
+    max-width:900px;margin:0 auto 40px;position:relative;z-index:1;text-align:center;
+    background:var(--card);border:1px solid #E2E8F0;border-radius:var(--r-lg);
+    padding:10px;box-shadow:0 8px 24px rgba(10,10,10,0.06);
   }
-  @media(min-width:640px){ .lessons-grid{grid-template-columns:1fr 1fr;} }
-  @media(min-width:1000px){ .lessons-grid{grid-template-columns:1fr 1fr 1fr;} }
-  .lesson-card{
-    position:relative;background:var(--card);border:var(--bw) solid var(--ink);
-    border-radius:var(--r-lg);padding:32px 24px 24px;
-    box-shadow:8px 8px 0px 0px var(--muted);
-    transition:transform .3s var(--bounce), box-shadow .3s var(--bounce);
+  .mockup-wrap img{
+    width:100%;height:auto;display:block;
+    border-radius:calc(var(--r-lg) - 6px);
   }
-  .lesson-card:hover{transform:rotate(-1deg) scale(1.02);box-shadow:8px 8px 0px 0px var(--accent);}
-  .lesson-num{
-    position:absolute;top:-22px;left:24px;
-    width:44px;height:44px;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    font-family:"Outfit",sans-serif;font-weight:800;font-size:17px;color:#fff;
-    border:var(--bw) solid var(--ink);
-    box-shadow:3px 3px 0px 0px var(--ink);
-  }
-  .lesson-card h4{font-size:18px;margin-top:8px;margin-bottom:10px;}
-  .lesson-card p{font-size:14.5px;color:var(--muted-foreground);}
 
-  .bonus-card{
-    margin-top:24px;position:relative;z-index:1;
-    background:var(--secondary);border:var(--bw) solid var(--ink);border-radius:var(--r-lg);
-    padding:32px;box-shadow:8px 8px 0px 0px var(--ink);
-    display:flex;align-items:center;gap:22px;flex-wrap:wrap;
-    color:#fff;
+  .modules-card{
+    max-width:760px;margin:0 auto;position:relative;z-index:1;
+    background:var(--card);border:var(--bw) solid var(--ink);border-radius:var(--r-lg);
+    padding:32px;box-shadow:8px 8px 0px 0px var(--accent);
   }
-  .bonus-icon{
-    width:64px;height:64px;border-radius:50%;background:#fff;flex-shrink:0;
-    display:flex;align-items:center;justify-content:center;border:2px solid var(--ink);
+  .modules-grid{display:grid;grid-template-columns:1fr;gap:18px;}
+  @media(min-width:640px){ .modules-grid{grid-template-columns:1fr 1fr;} }
+  .module-item{display:flex;align-items:center;gap:12px;font-weight:700;font-size:15px;text-align:left;}
+  .module-num{
+    flex-shrink:0;width:30px;height:30px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--tertiary);border:2px solid var(--ink);
   }
-  .bonus-card h4{color:#fff;font-size:20px;margin-bottom:6px;}
-  .bonus-card p{color:#ffe4f3;font-size:15px;max-width:48ch;}
 
   /* ---------- Comparison ---------- */
   .compare-stack{
@@ -314,7 +311,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .compare-bad{box-shadow:6px 6px 0px 0px var(--quaternary);transform:rotate(-1deg);}
   .compare-good{box-shadow:6px 6px 0px 0px var(--tertiary);transform:rotate(1deg);}
-  .compare-card h3{font-size:18px;margin-bottom:16px;}
+  .compare-header{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+  .compare-icon{
+    flex-shrink:0;width:38px;height:38px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    border:2px solid var(--ink);
+  }
+  .compare-icon-bad{background:var(--quaternary);}
+  .compare-icon-good{background:var(--accent);}
+  .compare-card h3{font-size:17px;}
   .compare-bad h3{color:var(--quaternary);}
   .compare-good h3{color:var(--foreground);}
   .compare-card ul{display:flex;flex-direction:column;gap:12px;}
@@ -375,12 +380,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .slider-dot.active{background:var(--accent);transform:scale(1.15);}
 
   /* ---------- Credibility ---------- */
-  .credibility{background:var(--muted);}
+  .credibility{background:var(--background);}
   .credibility .container{max-width:760px;position:relative;z-index:1;}
   .credibility h2{text-align:center;font-size:clamp(24px,4vw,32px);margin-bottom:28px;}
   .credibility p{font-size:16px;margin-bottom:16px;color:var(--foreground);text-align:center;}
   .credibility p strong{color:var(--accent);}
   .squiggle-divider{display:block;margin:40px auto 40px;}
+
+  .deliverables-card{
+    max-width:560px;margin:0 auto 32px;position:relative;z-index:1;
+    background:var(--card);border:var(--bw) solid var(--ink);border-radius:var(--r-lg);
+    padding:28px 28px 20px;box-shadow:6px 6px 0px 0px var(--tertiary);
+  }
+  .deliverables-card .eyebrow{margin-bottom:18px;}
+  .deliverables-grid{display:grid;grid-template-columns:1fr;gap:12px;}
+  @media(min-width:560px){ .deliverables-grid{grid-template-columns:1fr 1fr;} }
+  .deliverable-item{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;font-weight:600;text-align:left;}
+  .deliverable-check{
+    flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--accent);
+    color:#fff;font-size:11px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;margin-top:1px;
+  }
 
   /* ---------- Price ---------- */
   .price-card{
@@ -469,10 +489,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .shape{display:none;}
     .hero-blob{display:block;width:220px;height:220px;top:-90px;right:-100px;opacity:0.85;}
     .hero{padding-top:32px;}
-    .lesson-card{box-shadow:3px 3px 0px 0px var(--muted);}
-    .lesson-card:hover{transform:none;box-shadow:3px 3px 0px 0px var(--accent);}
     .flow-body{box-shadow:2px 2px 0px 0px var(--muted);}
-    .bonus-card{box-shadow:3px 3px 0px 0px var(--ink);flex-direction:column;text-align:center;}
+    .modules-card{box-shadow:4px 4px 0px 0px var(--accent);padding:22px;}
     .testimonial-card{box-shadow:3px 3px 0px 0px var(--secondary) !important;}
     .price-card{box-shadow:4px 4px 0px 0px var(--ink);padding:32px 20px;}
     .compare-bad{box-shadow:3px 3px 0px 0px var(--quaternary);transform:none;}
@@ -480,7 +498,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .compare-vs{width:44px;height:44px;font-size:13px;}
     .final-cta .shape{display:none;}
     .faq-item summary{font-size:14.5px;padding:16px 18px;}
-    .lessons-grid{gap:20px;}
     .tools-badges{gap:10px;}
     .tool-badge{font-size:13px;padding:5px 14px 5px 5px;}
   }
@@ -537,18 +554,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="hero-blob"></div>
   <div class="container hero-grid">
     <div>
-      <h1>A parte que mais consome quem trabalha e estuda não é o cansaço.</h1>
-      <p class="lead">É o esforço mental de transformar uma demanda da faculdade em uma <em>entrega</em>.</p>
-      <p class="sub">Você não precisa mais carregar esse peso sozinho.</p>
+      <h1>Muitos universitários precisam conciliar estudo e trabalho, o que aumenta a pressão da rotina.</h1>
+      <p class="lead">Por isso existe este <span class="hl hl-accent">passo a passo</span> pronto pra <span class="hl hl-secondary">pesquisar</span>, <span class="hl hl-quaternary">organizar</span> e <span class="hl hl-accent">montar qualquer trabalho</span> acadêmico com IA, mesmo que você nunca tenha usado inteligência artificial na vida.</p>
 
       <ul class="checklist">
-        <li><span class="check-bubble"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Pare de travar diante da tela em branco.</li>
-        <li><span class="check-bubble"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Nunca mais desperdice horas tentando descobrir por onde começar.</li>
-        <li><span class="check-bubble"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Transforme informações soltas em uma apresentação pronta.</li>
+        <li><span class="check-bubble"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Direto ao ponto, sem enrolação.</li>
+        <li><span class="check-bubble"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Serve pra TCC, seminário, relatório e apresentação.</li>
+        <li><span class="check-bubble"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Menos noite virada. Mais trabalho entregue no prazo.</li>
       </ul>
 
       <a href="https://checkout.pagtrust.com.br/ck3fc8f9e8?funnel=fnfb6af4a8" class="btn btn-primary js-checkout-cta" data-cta-location="hero" target="_blank" rel="noopener">
-        Eliminar o esforço mental
+        Quero o passo a passo
         <span class="icon-bubble"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
     </div>
@@ -561,16 +577,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="shape shape-circle" style="width:160px;height:160px;background:var(--secondary);opacity:0.2;bottom:-40px;right:-40px;"></div>
   <div class="container">
     <div class="section-head">
-      <h2>A faculdade não cansa apenas pelo tempo.</h2>
-      <p>Ela cansa porque toda semana você precisa resolver o mesmo problema. O professor passa uma atividade — e imediatamente sua cabeça começa:</p>
+      <h2>Essa pressão não é só sobre ter <span class="hl hl-quaternary">menos tempo</span>.</h2>
+      <p>É sobre precisar resolver o mesmo problema toda semana. O professor passa uma atividade. E imediatamente sua cabeça começa:</p>
     </div>
     <div class="pain-quotes">
-      <div class="pain-quote">"Por onde começo?"</div>
-      <div class="pain-quote">"Onde encontro informações?"</div>
-      <div class="pain-quote">"Como organizo tudo isso?"</div>
-      <div class="pain-quote">"Como isso vira uma apresentação?"</div>
+      <div class="pain-quote"><span class="pain-quote-mark">?</span>"Por onde começo?"</div>
+      <div class="pain-quote"><span class="pain-quote-mark">?</span>"Onde encontro informações?"</div>
+      <div class="pain-quote"><span class="pain-quote-mark">?</span>"Como organizo tudo isso?"</div>
+      <div class="pain-quote"><span class="pain-quote-mark">?</span>"Como isso vira uma apresentação?"</div>
     </div>
-    <p class="pain-outro">O desgaste começa muito antes da execução. Começa quando você precisa <strong>construir toda a estrutura sozinho.</strong></p>
+    <p class="pain-outro">Com pouco tempo sobrando no dia, você ainda esbarra num turbilhão de informação na internet. E acaba <strong>se perdendo antes mesmo de começar a montar o trabalho</strong>.</p>
+    <svg class="pain-squiggle" width="140" height="14" viewBox="0 0 140 14" aria-hidden="true">
+      <path d="M2 8c8-10 16 10 24 0s16-10 24 0 16 10 24 0 16-10 24 0 16 10 24 0 16-10 24 0" fill="none" stroke="var(--quaternary)" stroke-width="4" stroke-linecap="round"/>
+    </svg>
   </div>
 </section>
 
@@ -579,7 +598,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="shape shape-circle" style="width:180px;height:180px;background:var(--tertiary);opacity:0.5;top:20px;right:-70px;"></div>
   <div class="container">
     <div class="section-head">
-      <h2>Existe um sistema que faz esse trabalho por você.</h2>
+      <h2>A partir de agora, cada etapa já tem um caminho pronto pra seguir.</h2>
+      <p>Do recebimento da demanda até a entrega.</p>
     </div>
 
     <div class="flow-wrap">
@@ -588,30 +608,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="flow-icon" style="background:var(--accent);">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>
         </div>
-        <div class="flow-body"><h4>Professor passa a atividade</h4><p>O ponto de partida — e o momento em que, normalmente, o bloqueio começa.</p></div>
+        <div class="flow-body">
+          <h4>Professor passa a atividade</h4><p>O ponto de partida. E o momento em que, normalmente, o bloqueio começa.</p>
+        </div>
       </div>
       <div class="flow-item">
         <div class="flow-icon" style="background:var(--secondary);">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
         </div>
-        <div class="flow-body"><h4>O sistema encontra as informações certas</h4><p>Com fontes confiáveis, sem abrir dezenas de abas.</p></div>
+        <div class="flow-body">
+          <h4>Você já sabe onde encontrar as informações certas</h4><p>Sem abrir dez abas, sem garimpar sozinho por horas.</p>
+        </div>
       </div>
       <div class="flow-item">
         <div class="flow-icon" style="background:var(--quaternary);">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h10M4 18h13"/></svg>
         </div>
-        <div class="flow-body"><h4>O sistema organiza tudo em sequência lógica</h4><p>Transformando informações soltas em estrutura clara.</p></div>
+        <div class="flow-body">
+          <h4>Você já sabe como organizar tudo em sequência lógica</h4><p>Aquela bagunça de informação solta vira uma linha de raciocínio clara.</p>
+        </div>
       </div>
       <div class="flow-item">
-        <div class="flow-icon" style="background:#8b8b1a;background:var(--foreground);">
+        <div class="flow-icon" style="background:var(--foreground);">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 001 1h4"/><path d="M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z"/><path d="M9 13h6M9 17h6"/></svg>
         </div>
-        <div class="flow-body"><h4>O sistema transforma estrutura em entrega</h4><p>Um trabalho pronto para entregar — e você só precisa executar.</p></div>
+        <div class="flow-body">
+          <h4>Você chega na apresentação e no trabalho prontos</h4><p>Estruturado, organizado, pronto pra entregar.</p>
+        </div>
       </div>
     </div>
 
     <div class="flow-final">
-      <p>Você deixa de gastar energia pensando na estrutura.</p>
+      <p>Você troca madrugadas acordadas fazendo trabalho por boas noites de sono.</p>
       <svg class="flow-final-squiggle" width="140" height="14" viewBox="0 0 140 14" aria-hidden="true">
         <path d="M2 8c8-10 16 10 24 0s16-10 24 0 16 10 24 0 16-10 24 0 16 10 24 0 16-10 24 0" fill="none" stroke="var(--tertiary)" stroke-width="4" stroke-linecap="round"/>
       </svg>
@@ -628,88 +656,68 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- POSICIONAMENTO -->
-<section class="positioning">
-  <div class="shape" style="width:0;height:0;border-left:60px solid transparent;border-right:60px solid transparent;border-bottom:100px solid var(--tertiary);opacity:0.3;top:20px;left:6%;transform:rotate(12deg);"></div>
-  <div class="shape shape-circle" style="width:120px;height:120px;background:var(--secondary);opacity:0.25;bottom:10px;right:8%;"></div>
-  <div class="container">
-    <h2>Você não vai aprender IA.</h2>
-    <h3>Você vai aprender um <span>sistema que pensa a estrutura</span> das suas tarefas acadêmicas por você.</h3>
-  </div>
-</section>
-
 <!-- O QUE VOCÊ RECEBE -->
-<section id="conteudo">
+<section id="conteudo" style="background:var(--muted);">
   <div class="container">
     <div class="section-head">
       <h2>O que você recebe</h2>
-    </div>
-    <div class="lessons-grid">
-      <div class="lesson-card">
-        <span class="lesson-num" style="background:var(--accent);">01</span>
-        <h4>O fim da tela em branco</h4>
-        <p>Elimine o bloqueio inicial e saia do zero com clareza diante de qualquer atividade.</p>
-      </div>
-      <div class="lesson-card">
-        <span class="lesson-num" style="background:var(--secondary);">02</span>
-        <h4>O sistema que encontra informações por você</h4>
-        <p>Pesquise com velocidade, encontre fontes confiáveis e organize referências sem perder horas pesquisando.</p>
-      </div>
-      <div class="lesson-card">
-        <span class="lesson-num" style="background:var(--quaternary);">03</span>
-        <h4>O sistema que organiza tudo</h4>
-        <p>Transforme informações soltas em uma estrutura lógica. Use voz para debater ideias e organizar o raciocínio.</p>
-      </div>
-      <div class="lesson-card">
-        <span class="lesson-num" style="background:var(--foreground);">04</span>
-        <h4>O sistema que transforma estrutura em entrega</h4>
-        <p>Crie trabalhos completos e apresentações organizadas, sem carregar todo o peso mental do processo.</p>
-      </div>
-      <div class="lesson-card">
-        <span class="lesson-num" style="background:var(--accent);">05</span>
-        <h4>A execução do sistema na prática</h4>
-        <p>Veja o sistema aplicado do início ao fim, em uma demanda acadêmica real — do recebimento até a entrega pronta.</p>
-      </div>
+      <p>O sistema Apresentha.ai, em aulas práticas e rápidas.</p>
     </div>
 
-    <div class="bonus-card">
-      <div class="bonus-icon">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7C10.5 7 9 6 9 4.5S10.5 2 12 2s3 1.5 3 3-1.5 2-3 2zM12 7C10.5 7 9 6 9 4.5S10.5 2 12 2s3 1.5 3 3-1.5 2-3 2z"/></svg>
-      </div>
-      <div>
-        <h4>Bônus — Apresentações profissionais em minutos</h4>
-        <p>Aprenda a transformar seu conteúdo em slides organizados e prontos, sem perder horas montando do zero.</p>
+    <div class="mockup-wrap">
+      <img src="mockup.png" alt="Apresentha.ai no computador e no celular, com os módulos do sistema" width="1680" height="945" loading="lazy" decoding="async">
+    </div>
+
+    <div class="modules-card">
+      <div class="modules-grid">
+        <div class="module-item"><span class="module-num"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Como sair da tela em branco</div>
+        <div class="module-item"><span class="module-num"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Como pesquisar com fontes confiáveis</div>
+        <div class="module-item"><span class="module-num"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Como formular o pedido certo pra IA</div>
+        <div class="module-item"><span class="module-num"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Como organizar sua linha de raciocínio</div>
+        <div class="module-item"><span class="module-num"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Como fugir da linguagem genérica de IA</div>
+        <div class="module-item"><span class="module-num"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Como montar a apresentação</div>
+        <div class="module-item"><span class="module-num"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Design pronto e profissional</div>
+        <div class="module-item"><span class="module-num"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Aplicação em um caso real</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- COMPARATIVO -->
-<section style="background:var(--muted);">
+<section>
   <div class="container">
     <div class="section-head">
       <h2>A diferença entre usar IA e usar um sistema.</h2>
     </div>
     <div class="compare-stack">
       <div class="compare-card compare-bad">
-        <h3>Usando IA de forma aleatória</h3>
+        <div class="compare-header">
+          <span class="compare-icon compare-icon-bad">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17L13.5 8.5l-5 5L2 7"/><path d="M16 17h6v-6"/></svg>
+          </span>
+          <h3>Usando a IA da forma que 98% das pessoas usam</h3>
+        </div>
         <ul>
-          <li><span class="row-icon-x">✕</span>Abre o ChatGPT sem saber o que perguntar</li>
-          <li><span class="row-icon-x">✕</span>Recebe respostas soltas, sem estrutura</li>
-          <li><span class="row-icon-x">✕</span>Precisa tentar várias vezes até fazer sentido</li>
-          <li><span class="row-icon-x">✕</span>Gasta energia decidindo por onde começar</li>
-          <li><span class="row-icon-x">✕</span>Termina com mais dúvida do que começou</li>
+          <li><span class="row-icon-x">✕</span>Usa o ChatGPT pra tudo</li>
+          <li><span class="row-icon-x">✕</span>Pede pro ChatGPT o que quer sem uma formatação</li>
+          <li><span class="row-icon-x">✕</span>Perde um tempão com ele, e ele não entrega o que você gostaria</li>
+          <li><span class="row-icon-x">✕</span>Ele entrega uma linguagem genérica</li>
         </ul>
       </div>
       <div class="compare-vs">VS</div>
       <div class="compare-card compare-good">
-        <h3>Usando o sistema Apresentha.ai</h3>
+        <div class="compare-header">
+          <span class="compare-icon compare-icon-good">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          </span>
+          <h3>Sistema Apresentha.ai</h3>
+        </div>
         <ul>
-          <li><span class="row-icon-check">✓</span>Sabe exatamente o que pedir em cada etapa</li>
-          <li><span class="row-icon-check">✓</span>Recebe um caminho organizado do início ao fim</li>
-          <li><span class="row-icon-check">✓</span>Segue um processo validado, sem tentativa e erro</li>
-          <li><span class="row-icon-check">✓</span>Começa direto na execução</li>
-          <li><span class="row-icon-check">✓</span>Termina com uma entrega pronta</li>
+          <li><span class="row-icon-check">✓</span>Sabe usar uma ferramenta pra cada função</li>
+          <li><span class="row-icon-check">✓</span>Vai ter informação com fontes validadas</li>
+          <li><span class="row-icon-check">✓</span>Não vai passar raiva falando com a IA</li>
+          <li><span class="row-icon-check">✓</span>Vai ter uma assistente que não concorda contigo sempre</li>
+          <li><span class="row-icon-check">✓</span>Terá uma apresentação e trabalho prontos</li>
         </ul>
       </div>
     </div>
@@ -717,7 +725,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- DEPOIMENTOS -->
-<section>
+<section style="background:var(--muted);">
   <div class="shape shape-circle" style="width:150px;height:150px;background:var(--quaternary);opacity:0.15;top:-30px;left:-40px;"></div>
   <div class="container">
     <div class="section-head">
@@ -759,14 +767,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="shape shape-circle" style="width:200px;height:200px;background:var(--secondary);opacity:0.15;bottom:-60px;left:-60px;"></div>
   <div class="container">
     <h2>Por que o Apresentha.ai existe?</h2>
-    <p>O Apresentha.ai foi desenvolvido a partir da análise da rotina de universitários que conciliam faculdade e trabalho, com entrevistas, aplicações práticas e feedbacks reais.</p>
-    <p>Hoje existe mais informação sobre IA do que qualquer pessoa consegue absorver. Saber por onde começar, o que usar em cada etapa e como conectar tudo isso numa entrega real virou um problema por si só.</p>
-    <p><strong>O foco nunca foi ensinar IA.</strong></p>
-    <p>Sempre foi resolver um problema muito específico: como reduzir o esforço mental de transformar uma demanda acadêmica em uma entrega pronta.</p>
+    <p>O Apresentha.ai nasceu da rotina de quem concilia faculdade e trabalho, com entrevistas e feedbacks reais de universitários.</p>
+    <p>Hoje existe mais informação sobre IA do que qualquer pessoa consegue absorver. Saber o que pedir, em que ordem e como transformar isso numa entrega real virou um problema por si só.</p>
+    <p><strong>O foco nunca foi ensinar IA.</strong> Sempre foi entregar um sistema pronto pra sair de uma demanda acadêmica solta e chegar numa apresentação ou trabalho pronto pra entregar, gastando menos esforço mental no caminho.</p>
 
     <svg class="squiggle-divider" width="120" height="24" viewBox="0 0 120 24" aria-hidden="true">
       <path d="M2 12c8-10 16 10 24 0s16-10 24 0 16 10 24 0 16-10 24 0" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
     </svg>
+
+    <div class="deliverables-card">
+      <span class="eyebrow">Tudo isso incluso</span>
+      <div class="deliverables-grid">
+        <div class="deliverable-item"><span class="deliverable-check">✓</span>Como sair da tela em branco</div>
+        <div class="deliverable-item"><span class="deliverable-check">✓</span>Como pesquisar com fontes confiáveis</div>
+        <div class="deliverable-item"><span class="deliverable-check">✓</span>Como formular o pedido certo pra IA</div>
+        <div class="deliverable-item"><span class="deliverable-check">✓</span>Como organizar sua linha de raciocínio</div>
+        <div class="deliverable-item"><span class="deliverable-check">✓</span>Como fugir da linguagem genérica de IA</div>
+        <div class="deliverable-item"><span class="deliverable-check">✓</span>Como montar a apresentação</div>
+        <div class="deliverable-item"><span class="deliverable-check">✓</span>Design pronto e profissional</div>
+        <div class="deliverable-item"><span class="deliverable-check">✓</span>Aplicação em um caso real</div>
+        <div class="deliverable-item"><span class="deliverable-check">✓</span>Suporte por e-mail antes e depois da compra</div>
+        <div class="deliverable-item"><span class="deliverable-check">✓</span>Garantia de 7 dias</div>
+        <div class="deliverable-item"><span class="deliverable-check">✓</span>Acesso imediato após a compra</div>
+      </div>
+    </div>
 
     <div class="price-card">
       <span class="eyebrow">Acesso completo</span>
@@ -789,13 +813,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- GARANTIA -->
-<section>
+<section style="background:var(--muted);">
   <div class="container guarantee">
     <div class="seal">
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/><path d="M9 12l2 2 4-4"/></svg>
     </div>
     <h2>Garantia de 7 dias</h2>
-    <p>Assista às aulas, aplique o sistema e execute atividades reais.</p>
+    <p>Aplique o sistema e execute atividades reais.</p>
     <p>Se entender que ele não faz sentido para sua rotina, basta solicitar o reembolso dentro de sete dias. <strong>Sem burocracia. Sem perguntas.</strong></p>
   </div>
 </section>
@@ -822,8 +846,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="faq-list">
       <details class="faq-item">
+        <summary>É um curso, uma IA, um app? <span class="faq-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
+        <p class="faq-a">É um sistema com etapas práticas, mostradas em aulas rápidas. Você recebe o passo a passo pronto pra pesquisar, organizar e montar sua entrega, sem precisar entender de tecnologia por trás.</p>
+      </details>
+      <details class="faq-item">
         <summary>Preciso saber usar IA? <span class="faq-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
-        <p class="faq-a">Não. Você aprende tudo do zero, passo a passo.</p>
+        <p class="faq-a">Não. Você recebe o passo a passo pronto, do zero.</p>
       </details>
       <details class="faq-item">
         <summary>As ferramentas são pagas? <span class="faq-chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></summary>
@@ -854,7 +882,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="foot-top">
       <div>
         <div class="logo">Apresentha<span>.ai</span></div>
-        <p class="foot-note">Um sistema que pensa a estrutura das suas tarefas acadêmicas por você — para que você só precise executar a entrega final.</p>
+        <p class="foot-note">Um sistema que pensa a estrutura das suas tarefas acadêmicas por você, para que você só precise executar a entrega final.</p>
       </div>
       <div>
         <p style="font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#a3a3a3;margin-bottom:12px;">Funciona com</p>
@@ -866,7 +894,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Apresentha.ai — Todos os direitos reservados.</span>
+      <span>© 2026 Apresentha.ai. Todos os direitos reservados.</span>
       <span>suporte@apresentha.ai</span>
     </div>
   </div>
